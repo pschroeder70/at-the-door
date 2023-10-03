@@ -1,20 +1,40 @@
 ---
 import Layout from '../layout/Layout.astro';
+import Logo from '../components/logo.astro';
+import Specials from '../components/specials.astro';
+import DaySpecial from '../components/day-special.astro';
+import Footer from '../components/footer.astro';
 ---
 
 <Layout title="Leave it at the Door">
 	<main>
-   <div id="content">
+   <div class="content">
       <div class="header">
-        <div class="logo">
-          Logo
-        </div>
-        <h1>Leave it at the Door</h1>
-        <h2>
-          Bar, and some food.
-        </h2>
-        
+        <Logo />
       </div>
+      <h4>Welcome to Leave it at the Door, Where we ask that you please leave all your sh!t at the door!</h4>
+      <p>Bacon ipsum dolor amet shankle flank shoulder chuck, ground round labore tongue turducken ut. Brisket ham sausage ad do. Shank beef officia tempor, jerky ex chuck filet mignon proident hamburger tenderloin t-bone laboris. Enim shankle aute ut hamburger. Occaecat venison velit excepteur. Lorem swine est porchetta et kevin commodo buffalo. Short loin in laborum biltong consectetur.</p>
+      <p>Ut shankle turkey mollit et occaecat magna dolor short loin consequat tenderloin drumstick. Veniam adipisicing meatloaf filet mignon sed ham hock doner ut frankfurter pork belly fatback dolore landjaeger fugiat eiusmod. Proident venison pancetta tempor ut turducken est in prosciutto sausage short loin swine. Qui duis culpa voluptate id t-bone doner lorem nisi incididunt consequat. Buffalo nisi cupidatat, pork chop meatloaf venison fugiat. Jowl tail doner pastrami ribeye dolore shankle cow sausage beef ribs meatball landjaeger short ribs. Est ut landjaeger ball tip culpa.</p>
+      <p>Jerky alcatra duis, landjaeger filet mignon sausage ut buffalo hamburger ball tip andouille dolore adipisicing venison lorem. Flank ullamco bacon fugiat ut ham hock venison commodo cillum ipsum. Minim tongue consectetur shank porchetta. Capicola eiusmod flank, frankfurter burgdoggen occaecat nostrud bresaola ullamco dolore.</p>
     </div>
+    <Specials>
+      <DaySpecial day='Monday' drink='Keri-rita' food='Bogo Pizza' event='trivia' />
+      <DaySpecial day='Tuesday' drink='Green Juice' food='$2 burger' />
+      <DaySpecial day='Wednesday' drink='$5 Shotz' food='50 Cent Wing' event='LRC' />
+      <DaySpecial day='Thurday' drink='$2 Draft' food='1/2 price Apps' event='Music Bingo' />
+      <DaySpecial day='Friday' drink='1/2 off well drinks' food='Dollar a Rib' />
+    </Specials>
 	</main>
+  <Footer />
 </Layout>
+
+<style>
+  main {
+    display: flex;
+    width: var(--max-content-width);
+    margin: 0 auto;
+  }
+
+  .content {
+    flex: 1;
+  }

@@ -1,0 +1,31 @@
+---
+export interface Props {
+	day: string;
+    drink: string;
+    food: string;
+    event: string;
+}
+
+const { day } = Astro.props as Props;
+const { drink } = Astro.props as Props;
+const { food } = Astro.props as Props;
+const { event } = Astro.props as Props;
+---
+
+<div class=`day day--${day}`>
+    <h4>-- {day} --</h4>
+    <span><strong>Drink :</strong> {drink}</span>
+    <span><strong>Food :</strong> {food}</span>
+    <span><strong>Event :</strong> {event}</span>
+</div>
+
+<style>
+    .day {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .day h4 {
+        margin: 15px 0 5px;
+    }
+</style>
