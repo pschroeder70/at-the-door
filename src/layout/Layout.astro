@@ -7,7 +7,7 @@ export interface Props {
 
 const { title } = Astro.props as Props;
 
-const api = AIzaSyAahQnLy5sv3ZK0pfacCXxigfyNaxDdoCA;
+const api = 'AIzaSyAahQnLy5sv3ZK0pfacCXxigfyNaxDdoCA';
 
 ---
 
@@ -22,7 +22,7 @@ const api = AIzaSyAahQnLy5sv3ZK0pfacCXxigfyNaxDdoCA;
 	<main class='full-size'>
 		<slot />
 	<main />
-	<script src=`https://maps.googleapis.com/maps/api/js?key=${api}&callback=initMap&libraries=places&v=weekly` defer></script>
+	<script src=`https://maps.googleapis.com/maps/api/js?key=GOOGLE-API-KEY&callback=initMap&libraries=places&v=weekly` defer></script>
 </body>
 </html>
 
