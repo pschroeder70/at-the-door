@@ -6,6 +6,9 @@ export interface Props {
 }
 
 const { title } = Astro.props as Props;
+
+const api = AIzaSyAahQnLy5sv3ZK0pfacCXxigfyNaxDdoCA;
+
 ---
 
 <!DOCTYPE html>
@@ -19,7 +22,7 @@ const { title } = Astro.props as Props;
 	<main class='full-size'>
 		<slot />
 	<main />
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAahQnLy5sv3ZK0pfacCXxigfyNaxDdoCA&callback=initMap&libraries=places&v=weekly" defer></script>
+	<script src=`https://maps.googleapis.com/maps/api/js?key=${api}&callback=initMap&libraries=places&v=weekly` defer></script>
 </body>
 </html>
 
