@@ -6,8 +6,6 @@ import Specials from '../components/specials.astro';
 import DaySpecial from '../components/day-special.astro';
 import Footer from '../components/footer.astro';
 
-import Backbar from '../img/back-bar.jpg';
-import Darts from '../img/darts.jpg';
 ---
 
 <Layout class="main" title="Leave it at the Door">
@@ -19,8 +17,10 @@ import Darts from '../img/darts.jpg';
       </div>
       <h3 class='content__header'>Contact US</h3>
       <span class='content__body'>
-        <p>Bacon ipsum dolor amet shankle flank shoulder chuck, ground round labore tongue turducken ut. Brisket ham sausage ad do. Shank beef officia tempor, jerky ex chuck filet mignon proident hamburger tenderloin t-bone laboris. Enim shankle aute ut hamburger. Occaecat venison velit excepteur. Lorem swine est porchetta et kevin commodo buffalo. Short loin in laborum biltong consectetur.</p>
-        <p>Ut shankle turkey mollit et occaecat magna dolor short loin consequat tenderloin drumstick. Veniam adipisicing meatloaf filet mignon sed ham hock doner ut frankfurter pork belly fatback dolore landjaeger fugiat eiusmod. Buffalo nisi cupidatat, pork chop meatloaf venison fugiat. Jowl tail doner pastrami ribeye dolore shankle cow sausage beef ribs meatball landjaeger short ribs. Est ut landjaeger ball tip culpa.</p>
+        <p>We are located on Falling Spring Road, in Lovely Simpsonville SC.</p>
+        <div id="map"></div>
+        <p>You can email us at <a href='mailto:LeaveitAttheDoor@proton.me'>LeaveitattheDoor@proton.me</a></p>
+        <p>Give us a ring at <a href="tel:9995551212">(999) 555-1212</a></p>
         <p>Jerky alcatra duis, landjaeger filet mignon sausage ut buffalo hamburger ball tip andouille dolore adipisicing venison lorem. Flank ullamco bacon fugiat ut ham hock venison commodo cillum ipsum. Minim tongue consectetur shank porchetta. Capicola eiusmod flank, frankfurter burgdoggen occaecat nostrud bresaola ullamco dolore.</p>
       </span>
     </div>
@@ -34,8 +34,25 @@ import Darts from '../img/darts.jpg';
 	</div>
   <Footer />
 </Layout>
+<script>
+
+function initMap() {
+  const map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: 34.7364197, lng: -82.2329649 },
+    zoom: 17
+  });
+}
+
+window.initMap = initMap;
+</script>
 
 <style>
+
+  #map {
+		width: 75%;
+		min-height: 400px;
+    margin: 25px auto;
+	}
   .content {
     display: flex;
     max-width: var(--max-content-width);
