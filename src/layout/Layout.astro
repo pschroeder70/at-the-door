@@ -6,7 +6,9 @@ export interface Props {
 }
 
 const { title } = Astro.props as Props;
-const ApiKey="GOOGLE-API-KEY"
+
+const apiKey = import.meta.env.GOOGLE_API_KEY;
+
 ---
 
 <!DOCTYPE html>
@@ -20,7 +22,7 @@ const ApiKey="GOOGLE-API-KEY"
 	<main class='full-size'>
 		<slot />
 	<main />
-	<script src=`https://maps.googleapis.com/maps/api/js?key=${ApiKey}&callback=initMap&libraries=places&v=weekly` defer></script>
+	<script src=`https://maps.googleapis.com/maps/api/js?key=${apiKey}&callback=initMap&libraries=places&v=weekly` defer></script>
 </body>
 </html>
 

@@ -6,8 +6,8 @@ import Specials from '../components/specials.astro';
 import DaySpecial from '../components/day-special.astro';
 import Footer from '../components/footer.astro';
 
-import Backbar from '../img/back-bar.jpg';
-import Darts from '../img/darts.jpg';
+let currentPage = 'menu';
+
 ---
 
 <Layout class="main" title="Leave it at the Door">
@@ -15,7 +15,7 @@ import Darts from '../img/darts.jpg';
     <div class="content__one">
       <div class="header">
         <Logo />
-        <Nav />
+        <Nav {currentPage}/>
       </div>
       <h3 class='content__header'>MENU</h3>
       <span class='content__body'>
@@ -36,37 +36,5 @@ import Darts from '../img/darts.jpg';
 </Layout>
 
 <style>
-  .content {
-    display: flex;
-    max-width: var(--max-content-width);
-    width: 95%;
-  }
 
-  .content__one {
-    flex: 1;
-  }
-
-  .header {
-    display: flex;
-    align-items: center;
-  }
-
-  .content__body-img {
-    margin: 7px 25px;
-  }
-
-  .content__body-img--left {
-    float: left;
-    margin-left: 0;
-  }
-
-.content__body-img--right {
-  float: right;
-  margin-right: 0;
-}
-
-@media (max-width: 768px) {
-  .content {
-    flex-direction: column;
-  }
-}
+</style>

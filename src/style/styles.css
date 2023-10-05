@@ -3,6 +3,10 @@
 :root {
   --max-content-width: 1300px;
 
+  --logo-purple: ab77f0;
+  --logo-drk-purple: #340a52;
+  --logo-lt-purple: #986cB8;
+
   --main-family: 'Poppins', sans-serif;
   --color-bg: linear-gradient(180deg, #fff 65%, #ab77f0 100%);
 
@@ -24,3 +28,40 @@ body {
   height: 100%;
 }
 
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.content {
+  display: flex;
+  max-width: var(--max-content-width);
+  width: 95%;
+  margin: 25px 0 75px;
+}
+
+.content__one {
+  flex: 1;
+}
+
+.content__body-img {
+  margin: 7px 25px;
+}
+
+.content__body-img--left {
+  float: left;
+  margin-left: 0;
+}
+
+.content__body-img--right {
+float: right;
+margin-right: 0;
+}
+
+
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+  }
+}
