@@ -65,3 +65,7 @@ margin-right: 0;
     flex-direction: column;
   }
 }
+
+a {
+  text-decoration: none;
+}

@@ -5,8 +5,6 @@ export interface Props {
 
 let {currentPage} = Astro.props as Props;
 
-alert(`currentPage: ${currentPage}`);
-
 ---
 
 <div class="header__nav">
@@ -28,13 +26,12 @@ alert(`currentPage: ${currentPage}`);
         list-style: none;
     }
 
-    .header__nav li a {
+    a {
         margin-left: 10px;
         color: var(--logo-drk-purple);
-        text-decoration: none;
     }
 
-    .header__nav li a.active {
+    a.active {
         font-weight: bold;
         color: var(--logo-lt-purple);
         text-decoration: underline;
