@@ -23,6 +23,7 @@ alert(`menuItemPic : ${menuItemPic}`)
 <style>
     .menu-item {
         display: grid;
+        grid-template-rows: auto 1fr;
         gap: 25px;
     }
 
@@ -56,4 +57,5 @@ alert(`menuItemPic : ${menuItemPic}`)
     .menu-item__disc {
         grid-column-start: 2;
         grid-column-end: 3;
+        height: 100%;
     }
