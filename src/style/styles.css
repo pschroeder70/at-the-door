@@ -20,6 +20,7 @@
 html {
     font-family: var(--main-family);
     height: 100%;
+    scroll-behavior: smooth;
 }
 
 body {

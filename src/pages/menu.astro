@@ -22,11 +22,23 @@ let currentPage = 'menu';
         <Nav {currentPage}/>
       </div>
       <h3 class='content__header'>MENU</h3>
+      <div class='menu-nav'><a href='#lunch'>Lunch</a> <a href='#dinner'>Dinner</a></div>
       <span class='content__body'>
-        <div class='menu'>
+         
+        <div class='menu  menu--lunch' id='lunch'>
           <h4>Lunch</h4>
           <MenuItem menuItemPic={tacoPic} name="Tacos" price="$3.99" disc="Is it Tuesday yet???  Who cares, get two chicken or ground beef tacos served with rice and beans" />
           <MenuItem menuItemPic={beefPic} name="North Shore Roast Beef" price="$5.99" disc="Slow roasted rare beef, served on a toasted bun. Get it in a traditional 3-way (Mayo, James River BBQ sauce & american cheese) or customize it how you like." />
+          <MenuItem menuItemPic={tacoPic} name="Tacos" price="$3.99" disc="Is it Tuesday yet???  Who cares, get two chicken or ground beef tacos served with rice and beans" />
+          <MenuItem menuItemPic={beefPic} name="North Shore Roast Beef" price="$5.99" disc="Slow roasted rare beef, served on a toasted bun. Get it in a traditional 3-way (Mayo, James River BBQ sauce & american cheese) or customize it how you like." />
+          <a href='#page-top'>Back to Top</a>
+        </div>
+
+        <div class='menu  menu--dinner' id='dinner'>
+          <h4>Dinner</h4>
+          <MenuItem menuItemPic={tacoPic} name="Taco Dinner" price="$5.25" disc="Is it Tuesday yet???  Who cares, get 3 chicken or ground beef tacos served with rice and beans" />
+          <MenuItem menuItemPic={beefPic} name="North Shore Roast Beef" price="$5.99" disc="Slow roasted rare beef, served on a toasted bun. Get it in a traditional 3-way (Mayo, James River BBQ sauce & american cheese) or customize it how you like." />
+          <a href='#page-top'>Back to Top</a>
         </div>
       </span>
     </div>
