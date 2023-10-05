@@ -1,20 +1,16 @@
 ---
 
 export interface Props {
-    menuItemPic: string;
 	name: string;
     price: string;
     disc: string;
 }
 
-let {menuItemPic, name, price, disc} = Astro.props as Props;
-
-alert(`menuItemPic : ${menuItemPic}`)
+let {name, price, disc} = Astro.props as Props;
 
 ---
 
 <div class="menu-item">
-    <div class="menu-item__picture"><img src={menuItemPic} aria-hidden='true' /></div>
     <div class="menu-item__name">{name}</div>
     <div class="menu-item__price">{price}</div>
     <div class="menu-item__disc">{disc}</div>
@@ -23,40 +19,25 @@ alert(`menuItemPic : ${menuItemPic}`)
 <style>
     .menu-item {
         display: grid;
-        grid-template-columns: 200px 50% 1fr;
-        grid-template-rows: auto 1fr;
+        grid-template-columns: auto 1fr;
         margin: 15px 0 25px;
     }
 
-    .menu-item__picture {
-        grid-row-start: 1;
-        grid-row-end: 3;
-        width: 150px;
-        height: 125px;
-        overflow: hidden;
-        border-radius: 15px;
-    }
-
-    .menu-item__picture img {
-        width: 100%;
-        height: 125px;
-    }
-
     .menu-item__name {
-        grid-column-start: 2;
-        grid-column-end: 3;
-        font-size: 2rem;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        font-weight: bold;
     }
 
     .menu-item__price {
-        grid-column-start: 3;
-        grid-column-end: 4;
+        grid-column-start: 2;
+        grid-column-end: 3;
         text-align: right;
         font-size: .9rem;
     }
 
     .menu-item__disc {
-        grid-column-start: 2;
+        grid-column-start: 1;
         grid-column-end: 3;
         height: 100%;
     }

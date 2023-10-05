@@ -22,24 +22,65 @@ let currentPage = 'menu';
         <Nav {currentPage}/>
       </div>
       <h3 class='content__header'>MENU</h3>
-      <div class='menu-nav'><a href='#lunch'>Lunch</a> <a href='#dinner'>Dinner</a></div>
       <span class='content__body'>
          
-        <div class='menu  menu--lunch' id='lunch'>
-          <h4>Lunch</h4>
-          <MenuItem menuItemPic={tacoPic} name="Tacos" price="$3.99" disc="Is it Tuesday yet???  Who cares, get two chicken or ground beef tacos served with rice and beans" />
-          <MenuItem menuItemPic={beefPic} name="North Shore Roast Beef" price="$5.99" disc="Slow roasted rare beef, served on a toasted bun. Get it in a traditional 3-way (Mayo, James River BBQ sauce & american cheese) or customize it how you like." />
-          <MenuItem menuItemPic={tacoPic} name="Tacos" price="$3.99" disc="Is it Tuesday yet???  Who cares, get two chicken or ground beef tacos served with rice and beans" />
-          <MenuItem menuItemPic={beefPic} name="North Shore Roast Beef" price="$5.99" disc="Slow roasted rare beef, served on a toasted bun. Get it in a traditional 3-way (Mayo, James River BBQ sauce & american cheese) or customize it how you like." />
-          <a href='#page-top'>Back to Top</a>
+        <div class="menu">
+          <div class="menu__column menu__column--apps">
+            <h4>Appitizers</h4>
+            <MenuItem name="Nachos" price="$12.99" disc="nachos!!  Chix or Beef, OR BOTH!  disc to come." />
+            <MenuItem name="Mozz Sticks" price="$9.99" disc="Crispy fried mozzarella cheese, served with a side of marinara sauce" />
+            <MenuItem name="Chix Fingers" price="$3.99" disc="It's chicken fingers, come on you know what they are! Get em Buffalo if your spicy." />
+            <MenuItem name="Pretzel Sticks" price="$5.99" disc="Warm Bavarian pretzel w/beer cheese for dipping!" />
+            <MenuItem name="Egg Rolls" price="$5.25" disc="Actually contains no eggs... but it is rolled & filled with shredded cabbage, pork, and a few other things." />
+          </div>
+          <div class="menu__column--border"></div>
+          <div class="menu__column menu__column--sandies">
+            <h4>Handfull</h4>
+            <MenuItem name="Smash Burgers" price="$12.99" disc="Not one but two 4oz patties smash to perfection, and served on a toasted bun! Add the toppings you like, or keep it simple with just cheese!*" />
+            <MenuItem name="Chix Bacon Ranch Wrap" price="$9.99" disc="Wrights Bacon!!! Marinated chicken, Homemade Ranch dressing w/lettuce & tomato" />
+            <MenuItem name="Steak & Cheese" price="$3.99" disc="It's chicken fingers, come on you know what they are! Get em Buffalo if your spicy." />
+            <MenuItem name="The Bomb!" price="$5.99" disc="Steak & Cheese but add in pepperoni, ham, onions, peppers... good stuff!" />
+            <p>* choice of side w/burgers & sandwiches</p>
+          </div>
+          <div class="menu__column--border2"></div>
+            <div class="menu__column menu__column--entrees">
+            <h4>Entrees</h4>
+            <MenuItem menuItemPic={tacoPic} name="Baked Mac & Cheese" price="$12.99" disc="nachos!!  Chix or Beef, OR BOTH!  disc to come." />
+            <MenuItem menuItemPic={beefPic} name="Steak Tips" price="$9.99" disc="Crispy fried mozzarella cheese, served with a side of marinara sauce" />
+            <MenuItem menuItemPic={tacoPic} name="Spegetti and Meatballs" price="$3.99" disc="It's chicken fingers, come on you know what they are! Get em Buffalo if your spicy." />
+            <MenuItem menuItemPic={beefPic} name="Meatloaf" price="$5.99" disc="Warm Bavarian pretzel w/beer cheese for dipping!" />
+          </div>
+          <div class="menu__row menu__row--pizza">
+            <h4>Pub Pizza $9.99</h4>
+            <h3>Personal sized pizza, additional toppings $1/per</h3>
+            <p>Toppings include: pepperoni, onions, green pepper, muchroom, bacon, sausage, tomato, ham</p>
+          </div>
+          <div class="menu__row menu__row--extra">
+            <div>
+              <h4>Sauces</h4>
+              <ul>
+                <li>Buffalo</li>
+                <li>Carolina Gold</li>
+                <li>Salem Sauce</li>
+                <li>Garlic Parm</li>
+                <li>BBQ</li>
+                <li>Bourbon</li>
+              </ul>
+            </div>
+            <div>
+              <h4>Sides</h4>
+              <ul>
+                <li>Fries</li>
+                <li>Hand Cut Wedge Fries</li>
+                <li>Onion Rings</li>
+                <li>Side Salad</li>
+                <li>Rice</li>
+              </ul>
+            </div>
+          
+          </div>
         </div>
-
-        <div class='menu  menu--dinner' id='dinner'>
-          <h4>Dinner</h4>
-          <MenuItem menuItemPic={tacoPic} name="Taco Dinner" price="$5.25" disc="Is it Tuesday yet???  Who cares, get 3 chicken or ground beef tacos served with rice and beans" />
-          <MenuItem menuItemPic={beefPic} name="North Shore Roast Beef" price="$5.99" disc="Slow roasted rare beef, served on a toasted bun. Get it in a traditional 3-way (Mayo, James River BBQ sauce & american cheese) or customize it how you like." />
-          <a href='#page-top'>Back to Top</a>
-        </div>
+        <a href='#page-top'>Back to Top</a>
       </span>
     </div>
     <Specials>
@@ -54,5 +95,56 @@ let currentPage = 'menu';
 </Layout>
 
 <style>
+.menu {  display: grid;
+  grid-template-columns: 1fr 1fr 51px 1fr 1fr 51px 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "menu__column--apps menu__column--apps menu__column--border menu__column--sandies menu__column--sandies menu__column--border2 menu__column--entrees menu__column--entrees"
+    ". menu__row--pizza menu__row--pizza menu__row--pizza menu__row--pizza menu__row--pizza menu__row--pizza ."
+    ". menu__row--extra menu__row--extra menu__row--extra menu__row--extra menu__row--extra menu__row--extra .";
+}
 
+.menu__column--apps { grid-area: menu__column--apps; }
+
+.menu__column--entrees { grid-area: menu__column--entrees; }
+
+.menu__row--pizza { grid-area: menu__row--pizza; text-align: center;}
+
+.menu__row--extra { grid-area: menu__row--extra; border-top: 1px solid var(--logo-lt-purple); }
+
+.menu__column--sandies { grid-area: menu__column--sandies; }
+
+.menu__column--border { grid-area: menu__column--border; }
+
+.menu__column--border2 { grid-area: menu__column--border2;}
+
+.menu__column--border,
+.menu__column--border2 {
+  background-color: var(--logo-lt-purple);
+  margin: 55% 25px;
+}
+
+.menu__row {
+  display: flex;
+  margin-top: 35px;
+}
+
+.menu__row--pizza {
+  flex-direction: column;
+}
+.menu__row--extra {
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 35px;
+}
+
+  .menu__column h4,
+  .menu__row h4 {
+    font-size: 1.5em;
+    text-align: center;
+    margin: 0;
+    color: var(--logo-drk-purple);
+  }
 </style>
