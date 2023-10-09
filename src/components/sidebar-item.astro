@@ -31,12 +31,9 @@ const { event } = Astro.props as Props;
 
     @media (max-width: 768px) {
         .day {
-            width: 20%;
-            flex: 1;
-        }
-
-        .day span strong {
-            display: none;
+            flex-direction: column;
+            width: 100%;
+            flex: 0 1 auto;
         }
     }
 </style>

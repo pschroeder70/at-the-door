@@ -1,53 +1,29 @@
 ---
 import Layout from '../layout/Layout.astro';
-import Logo from '../components/logo.astro';
-import Nav from '../components/navigation.astro';
-import Specials from '../components/specials.astro';
-import DaySpecial from '../components/day-special.astro';
-import Footer from '../components/footer.astro';
-
-let currentPage = 'contact';
-
 ---
 
-<Layout class="main" title="Leave it at the Door">
-	<div class="content">
-    <div class="content__one">
-      <div class="header">
-        <Logo />
-        <Nav {currentPage} />
-      </div>
-      <h3 class='content__header'>Contact US</h3>
-      <span class='content__body'>
-        <p>We are located on Falling Spring Road, in Lovely Simpsonville SC.</p>
-        <div id="map"></div>
-        <p>Maybe you like to fill out forms?  Come on who doesn't??</p>
-        <form name="contact" method="POST" data-netlify="true">
-          <p>
-            <label>Name: <input type="text" name="name" /></label>
-            <label>Email: <input type="email" name="email" /></label>
-          </p>
-          <p>
-            <label>Message: <textarea name="message"></textarea></label>
-          </p>
-          <p>
-            <button type="submit">Send</button>
-        </form>
+<Layout title="Leave it at the Door" currentPage = 'contact'>
+  <h3 class='content__header'>Contact US</h3>
+  <span class='content__body'>
+    <p>We are located on Falling Spring Road, in Lovely Simpsonville SC.</p>
+    <div id="map"></div>
+    <p>Maybe you like to fill out forms?  Come on who doesn't??</p>
+    <form name="contact" method="POST" data-netlify="true">
+      <p>
+        <label>Name: <input type="text" name="name" /></label>
+        <label>Email: <input type="email" name="email" /></label>
+      </p>
+      <p>
+        <label>Message: <textarea name="message"></textarea></label>
+      </p>
+      <p>
+        <button type="submit">Send</button>
+    </form>
 
-        <p>Or maybe email is more your thing <a href='mailto:LeaveitAttheDoor@proton.me'>LeaveitattheDoor@proton.me</a></p>
-        <p>Or you could give us a ring at <a href="tel:9995551212">(999) 555-1212</a>, but come on, isn't this more a text type thing?</p>
-        </p>
-      </span>
-    </div>
-    <Specials>
-      <DaySpecial day='Monday' drink='Keri-rita' food='Bogo Pizza' event='Trivia' />
-      <DaySpecial day='Tuesday' drink='Green Juice' food='$2 burger' event='1/2 Price Pool!' />
-      <DaySpecial day='Wednesday' drink='$5 Shotz' food='50 Cent Wing' event='Karaoke' />
-      <DaySpecial day='Thurday' drink='$2 Draft' food='1/2 price Apps' event='Music Bingo' />
-      <DaySpecial day='Friday' drink='1/2 off well drinks' food='Dollar a Rib' event='Karaoke' />
-    </Specials>
-	</div>
-  <Footer />
+    <p>Or maybe email is more your thing <a href='mailto:LeaveitAttheDoor@proton.me'>LeaveitattheDoor@proton.me</a></p>
+    <p>Or you could give us a ring at <a href="tel:9995551212">(999) 555-1212</a>, but come on, isn't this more a text type thing?</p>
+    </p>
+  </span>
 </Layout>
 <script>
 

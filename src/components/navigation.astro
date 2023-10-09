@@ -8,32 +8,138 @@ let {currentPage} = Astro.props as Props;
 ---
 
 <div class="header__nav">
-    <ul>
+    <div class="header__nav-mobile">
+    </div>
+    <ul class="header__nav-items">
         <li><a class={currentPage === 'home' ? 'active' : ''} href="/">Home</a></li>
         <li><a class={currentPage === 'menu' ? 'active' : ''} href="/menu.html">Menu</a></li>
+        <li><a class={currentPage === 'drinks' ? 'active' : ''} href="/drinks.html">Drinks</a></li>
         <li><a class={currentPage === 'specials' ? 'active' : ''} href="/specials.html">Specials</a></li>
         <li><a class={currentPage === 'contact' ? 'active' : ''} href="/contact-us.html">Contact Us</a></li>
     </ul>
 </div>
+<script>
+const headerNav = document.querySelector('.header__nav');
+
+let headerNavItemsWidth = document.querySelector('.header__nav-items').offsetWidth;
+let headerNavItemsHeight  = document.querySelector('.header__nav-items').offsetHeight;
+
+document.documentElement.style.setProperty('--header-nav-width', `${headerNavItemsWidth}px`);
+document.documentElement.style.setProperty('--header-nav-height', `${headerNavItemsHeight}px`);
+if (headerNav) {
+    headerNav.addEventListener("click", function(){
+        headerNav.classList.toggle('header__nav--active');
+    });
+}
+</script>
 
 <style>
-    .header__nav {
-        flex: 1;
-    }
-    .header__nav ul {
-        display: flex;
-        justify-content: flex-end;
-        list-style: none;
-    }
+ .header__nav {
+    position: relative;
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    width: auto;
+	height: 100px;
+}
 
-    a {
-        margin-left: 10px;
-        color: var(--logo-drk-purple);
-    }
+.header__nav-items {
+    display: flex;
+    list-style: none;
+}
 
-    a.active {
-        font-weight: bold;
-        color: var(--logo-lt-purple);
-        text-decoration: underline;
-    }
+.header__nav-items li {
+	padding: 5px 10px;
+}
+
+.header__nav-items li a.active {
+    color: var(--logo-lt-purple);
+    font-weight: bold;
+}
+
+@media (max-width: 1000px) {
+	.header__nav {
+		position: relative;
+		display: flex;
+		flex: 1;
+		justify-content: flex-end;
+		width: auto;
+		height: 100px;
+	}
+
+	.header__nav-items {
+		display: none;
+		opacity: 0;
+		transition: 0.5s;
+		display: flex;
+		flex-direction: column;
+		margin-top: calc(-2 * var(--header-nav-height));
+	}
+
+	.header__nav--active .header__nav-mobile {
+		transform: rotate(180deg);
+		box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+		margin-right: var(--header-nav-width);
+	}
+
+	.header__nav--active .header__nav-mobile:before {
+		top: -9px;
+		left: -5px;
+		border-radius: 0;
+		transform: rotate(135deg);
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0);
+	}
+
+	.header__nav--active .header__nav-mobile:after {
+		top: 9px;
+		left: -5px;
+		border-radius: 0;
+		transform: rotate(45deg);
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0);
+	}
+
+	.header__nav-mobile,
+	.header__nav-mobile:before,
+	.header__nav-mobile:after {	
+		height: 4px;
+		width: 30px;  
+	}
+
+	.header__nav-mobile {
+		transition: 0.5s;
+		position: absolute;
+		background: var(--logo-lt-purple);
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);  
+		margin-top: 30px;
+	}
+
+	.header__nav-mobile:before,
+	.header__nav-mobile:after {
+		content: "";
+		position: absolute;
+		background: var(--logo-lt-purple);
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+		transition: 0.5s;
+	}
+
+	.header__nav-mobile:before {
+		top: -8px;
+		border-top-left-radius: 16px;
+		border-top-right-radius: 16px;
+	}
+
+	.header__nav-mobile:after {
+		top: 8px;
+		border-bottom-left-radius: 16px;
+		border-bottom-right-radius: 16px;
+	}
+
+	.header__nav--active .header__nav-items {
+		display: block;
+		opacity: 1;
+		margin-right: 0;
+		margin-top: 14px;
+		padding: 0;
+	}
+}
 </style>

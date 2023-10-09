@@ -1,29 +1,9 @@
 ---
 import Layout from '../layout/Layout.astro';
-import Logo from '../components/logo.astro';
-import Nav from '../components/navigation.astro';
-import Specials from '../components/specials.astro';
-import DaySpecial from '../components/day-special.astro';
 import MenuItem from '../components/menu-item.astro';
-import Footer from '../components/footer.astro';
-
-import tacoPic from '../img/taco.jpg';
-import beefPic from '../img/beef.jpg';
-
-let currentPage = 'menu';
-
 ---
 
-<Layout class="main" title="Leave it at the Door">
-	<div class="content">
-    <div class="content__one">
-      <div class="header">
-        <Logo />
-        <Nav {currentPage}/>
-      </div>
-      <h3 class='content__header'>MENU</h3>
-      <span class='content__body'>
-         
+<Layout title="Leave it at the Door" currentPage = "menu">
         <div class="menu">
           <div class="menu__column menu__column--apps">
             <h4>Appitizers</h4>
@@ -35,20 +15,20 @@ let currentPage = 'menu';
           </div>
           <div class="menu__column--border"></div>
           <div class="menu__column menu__column--sandies">
-            <h4>Handfull</h4>
-            <MenuItem name="Smash Burgers" price="$12.99" disc="Not one but two 4oz patties smash to perfection, and served on a toasted bun! Add the toppings you like, or keep it simple with just cheese!*" />
+            <h4>Hands On</h4>
+            <MenuItem name="Smash Burgers" price="$9.99" disc="Not one but two 4oz patties smash to perfection, and served on a toasted bun! Add the toppings you like, or keep it simple with just cheese!*" />
             <MenuItem name="Chix Bacon Ranch Wrap" price="$9.99" disc="Wrights Bacon!!! Marinated chicken, Homemade Ranch dressing w/lettuce & tomato" />
-            <MenuItem name="Steak & Cheese" price="$3.99" disc="Thin sliced ribeye, and lots of cheese!!" />
-            <MenuItem name="The Bomb!" price="$5.99" disc="Steak & Cheese but add in pepperoni, ham, onions, peppers... good stuff!" />
+            <MenuItem name="Steak & Cheese" price="$8.99" disc="Thin sliced ribeye, and lots of cheese!! Make it a bomb for $2" />
+            <MenuItem name="Schnitzel Sandwich" price="$5.99" disc="Tenderized Pork Cutlet breaded and fried, served on a toasted roll with mayo & lettuce!" />
             <p>* choice of side w/burgers & sandwiches</p>
           </div>
           <div class="menu__column--border2"></div>
             <div class="menu__column menu__column--entrees">
             <h4>Entrees</h4>
-            <MenuItem menuItemPic={tacoPic} name="Baked Mac & Cheese" price="$12.99" disc="It's not that stuff that comes with an orange packet!!!" />
-            <MenuItem menuItemPic={beefPic} name="Steak Tips" price="$9.99" disc="Tell us how you want them cooked, anything over med-rare is a sin." />
-            <MenuItem menuItemPic={tacoPic} name="Spegetti and Meatballs" price="$3.99" disc="Just like mama used to make, if Keri was your mom." />
-            <MenuItem menuItemPic={beefPic} name="Meatloaf" price="$5.99" disc="it's meat, it's a loaf... it's good?  Comes with mash & gravy" />
+            <MenuItem name="Baked Mac & Cheese" price="$12.99" disc="It's not that stuff that comes with an orange packet!!!" />
+            <MenuItem name="Steak Tips" price="$9.99" disc="Tell us how you want them cooked, anything over med-rare is a sin." />
+            <MenuItem name="Spegetti and Meatballs" price="$3.99" disc="Just like mama used to make, if Keri was your mom." />
+            <MenuItem name="Meatloaf" price="$5.99" disc="it's meat, it's a loaf... it's good?  Comes with mash & gravy" />
           </div>
           <div class="menu__row menu__row--pizza">
             <h4>Pub Pizza $9.99</h4>
@@ -84,19 +64,11 @@ let currentPage = 'menu';
         <a href='#page-top'>Back to Top</a>
       </span>
     </div>
-    <Specials>
-      <DaySpecial day='Monday' drink='Keri-rita' food='Bogo Pizza' event='Trivia' />
-      <DaySpecial day='Tuesday' drink='Green Juice' food='$2 burger' event='1/2 Price Pool!' />
-      <DaySpecial day='Wednesday' drink='$5 Shotz' food='50 Cent Wing' event='Karaoke' />
-      <DaySpecial day='Thurday' drink='$2 Draft' food='1/2 price Apps' event='Music Bingo' />
-      <DaySpecial day='Friday' drink='1/2 off well drinks' food='Dollar a Rib' event='Karaoke' />
-    </Specials>
-	</div>
-  <Footer />
 </Layout>
 
 <style>
-.menu {  display: grid;
+.menu { 
+  display: grid;
   grid-template-columns: 1fr 1fr 51px 1fr 1fr 51px 1fr 1fr;
   grid-template-rows: auto auto auto;
   gap: 0px 0px;
@@ -141,11 +113,40 @@ let currentPage = 'menu';
   padding-top: 35px;
 }
 
-  .menu__column h4,
-  .menu__row h4 {
-    font-size: 1.5em;
-    text-align: center;
-    margin: 0;
-    color: var(--logo-drk-purple);
+.menu__row--extra ul {
+  list-style: none;
+  padding-left:0;
+}
+
+.menu__column h4,
+.menu__row h4 {
+  font-size: 1.5em;
+  text-align: center;
+  margin: 0;
+  color: var(--logo-drk-purple);
+}
+
+  
+@media (max-width: 1000px) {
+  .menu { 
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+    "menu__column--apps"
+    "menu__column--sandies"
+    "menu__column--entrees"
+    "menu__row--pizza"
+    "menu__row--extra";
   }
+
+  .menu__row--extra {
+    flex-direction: column;
+  }
+
+  .menu__row--extra ul {
+    column-count: 2; /* Display as two columns */
+    column-gap: 20px; /* Adjust the gap between columns as needed */
+  }
+
+}
 </style>

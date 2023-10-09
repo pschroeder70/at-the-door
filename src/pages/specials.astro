@@ -1,37 +1,93 @@
 ---
 import Layout from '../layout/Layout.astro';
-import Logo from '../components/logo.astro';
-import Nav from '../components/navigation.astro';
-import Specials from '../components/specials.astro';
-import DaySpecial from '../components/day-special.astro';
-import Footer from '../components/footer.astro';
-
-let currentPage = 'specials';
+import beefPic from '../img/beef.jpg';
 ---
 
-<Layout class="main" title="Leave it at the Door">
-	<div class="content">
-    <div class="content__one">
-      <div class="header">
-        <Logo />
-        <Nav {currentPage}/>
+<Layout title='Leave it at the Door' currentPage = 'specials'>
+  <h3>SPECIALS</h3>
+  <div>
+    <p>These are our weekly specials, we do a daily drink & food special that is above and beyond our standard menu, we hope you give em a try!</p>
+    <div>
+      <div class='special' id='mon'>
+        <h4>Monday</h4>
+        <div class='special__items'>
+          <div><h5>Drink :</h5> $2 Draft Day! You can't get anything for a buck! But if you have two you can get a beer!</div>
+          <div><h5>Food :</h5> Schnitzel Burger <small>(AKA The Schnitty)</small> - Your choice of chicken or pork Schnitty, with shredded iceberg and mayonnaise.</div>
+          <div><h5>Event :</h5> Music Bingo - a fun spin on traditional bingo that allows you to jam out to snippets of songs while playing competitively against other music lovers!</div>
+        </div>
       </div>
-      <h3 class='content__header'>SPECIALS</h3>
-      <span class='content__body'>
-        <p>Coming Soon!</p>
-      </span>
+      <div class='special' id='tues'>
+        <h4>Tuesday</h4>
+        <div class='special__items'>
+          <div><h5>Drink :</h5> Keri-rita - Keri's tequila concoction, ask about what flavors we have made.</div>
+          <div><h5>Food :</h5> Taco Tuesday!! 2 crispy tacos stuffed with seasoned beef, lettuce & tomato. Sour cream & refried beans on the side if you ask nice.</div>
+          <div><h5>Event :</h5> Free Pool!! Something funny about pool? You tell us...</div>
+        </div>
+      </div>
+      <div class='special' id='wed'>
+        <h4>Wednesday</h4>
+        <div class='special__items'>
+          <div><h5>Drink :</h5> $3 Shot-O-Day - Not even we know what the bartender will come up with...but we will test it a couple times!</div>
+          <div><h5>Food :</h5> Meatloaf Dinner - Comes with choice of mashed or fries, and green beans or Brocolli. Comfort food!</div>
+          <div><h5>Event :</h5> Karaoke Night - sing it like ya just don't care, we don't!</div>
+        </div>
+      </div>
+      <div class='special' id='thurs'>
+        <h4>Thursday</h4>
+        <div class='special__items'>
+          <div><h5>Drink :</h5> $3 Shot-O-Day - Not even we know what the bartender will come up with...but we will test it a couple times!</div>
+          <div><h5>Food :</h5> 1/2 price Apps - Any of our Appitizers, are half off!!  So get a few!</div>
+          <div><h5>Event :</h5> Trivia - Family Fued Style! Top 5 answers on the board! <small>(we don't have a board...yet)</small></div>
+        </div>
+      </div>
+      <div class='special' id='fri'>
+        <h4>Friday</h4>
+        <div class='special__items'>
+          <div><h5>Drink :</h5> Half Price Wells - Any drinks made from well spirits are half off!</div>
+          <div><h5>Food :</h5> N.S. Roast Beef - A North Shore Classic, slow roasted rare roast beef, sliced wicked thin, and piled high on a toasted roll. Have it in a classic 3-way, mayo, <small>(James River BBQ)</small>sauce & <small>(American)</small>cheese!</div>
+          <div><h5>Event :</h5> Live DJ! Music is on us, request your favorite song!</div>
+        </div>
+      </div>
+      <a href='#page-top' class='bk-top'>Back to Top</a>
     </div>
-    <Specials>
-      <DaySpecial day='Monday' drink='Keri-rita' food='Bogo Pizza' event='Trivia' />
-      <DaySpecial day='Tuesday' drink='Green Juice' food='$2 burger' event='1/2 Price Pool!' />
-      <DaySpecial day='Wednesday' drink='$5 Shotz' food='50 Cent Wing' event='Karaoke' />
-      <DaySpecial day='Thurday' drink='$2 Draft' food='1/2 price Apps' event='Music Bingo' />
-      <DaySpecial day='Friday' drink='1/2 off well drinks' food='Dollar a Rib' event='Karaoke' />
-    </Specials>
-	</div>
-  <Footer />
+  </div>
 </Layout>
-
 <style>
+  .special-links {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    list-style:none;
+  }
+  .special-links li {
+  }
+  .bk-top {
+    font-size: .8em;
+  }
+  .special h4, h5 {
+    margin-bottom: 0;
+  }
+  .special__items {
+    display: flex;
+    justify-content: space-between;
+  }
+  .special__items div {
+    width: 30%;
+  }
 
+  @media (max-width: 1000px) {
+    .special__items {
+      flex-direction: column;
+    }
+    .special__items div {
+      width: 100%;
+    }
+
+    .special__items img {
+      float: left;
+      width: auto;
+      height: 120px;
+      margin-right: 10px;
+    }
+  }
 </style>
