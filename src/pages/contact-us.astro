@@ -1,5 +1,7 @@
 ---
 import Layout from '../layout/Layout.astro';
+
+const apiKey = 'AIzaSyAahQnLy5sv3ZK0pfacCXxigfyNaxDdoCA';
 ---
 
 <Layout title="Leave it at the Door" currentPage = 'contact'>
@@ -35,7 +37,7 @@ import Layout from '../layout/Layout.astro';
 
   window.initMap = initMap;
 </script>
-
+<script src=`https://maps.googleapis.com/maps/api/js?key=${apiKey}&callback=initMap&libraries=places&v=weekly` defer></script>
 <style>
 
   #map {
@@ -55,10 +57,6 @@ import Layout from '../layout/Layout.astro';
     margin: 0 auto;
     background: rgba(255, 255, 255, .5);
     color: #000;
-  }
-
-  label {
-    
   }
 
   textarea {

@@ -1,19 +1,23 @@
 ---
+import { Image } from 'astro:assets';
 import LogoImg from '../img/logo-v2.png';
+const logoAlt = 'Leave it at the Door Logo';
 ---
 
 <div class='logo'>
-    <img src={ LogoImg } alt="Leave it at the Door, Bar & Food" />
+    <Image
+        src={LogoImg}
+        width={250}
+        alt='Leave it at the Door Logo'
+    />
 </div>
 
 <style>
-    .logo img {
-        width: 250px;
-    }
 
     @media (max-width: 768px) {
         .logo img {
-            width: 150px;
+            width: 200px;
+            height: auto;
         }
     }
 </style>

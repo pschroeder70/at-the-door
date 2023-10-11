@@ -1,6 +1,7 @@
 @font-face {
   font-family: 'az-cut-script';
-  src: url('../fonts/AZCutScript.otf') format('opentype');
+  src: url('../fonts/kaushanscript-regular-webfont.woff2') format('woff2'),
+       url('../fonts/kaushanscript-regular-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -52,6 +53,16 @@ body {
   color: #fff;
 }
 
+a,
+a:visited {
+  color: var(--logo-lt-purple);
+}
+
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
 .header {
   display: flex;
   align-items: center;
@@ -72,12 +83,12 @@ body {
 .content__body {
   background-color: rgba(0, 0, 0, .8);
   border-radius: 15px;
-  padding: 5px 20px;
+  padding: 5px 20px 15px;
   min-height: 50vh;
 }
 
 .content__header {
-  font-size: 1.3em;
+  font-size: 1.5em;
   font-family: var(--content-header);
   font-weight: normal;
 }
@@ -96,13 +107,12 @@ float: right;
 margin-right: 0;
 }
 
+.bk-top {
+  font-size: .8em;
+}
 
 @media (max-width: 1000px) {
   .content {
     flex-direction: column;
   }
-}
-
-a {
-  text-decoration: none;
 }

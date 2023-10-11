@@ -1,4 +1,6 @@
 ---
+import { ViewTransitions } from 'astro:transitions';
+
 import '../style/styles.css'
 import Logo from '../components/logo.astro';
 import Nav from '../components/navigation.astro';
@@ -20,6 +22,7 @@ const apiKey = import.meta.env.GOOGLE_API_KEY;
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width">
 	<title>{title}</title>
+	<ViewTransitions />
 </head>
 <body>
 	<main class='full-size' id="page-top">
@@ -35,7 +38,6 @@ const apiKey = import.meta.env.GOOGLE_API_KEY;
 			</div>
 	  	<Footer />
 	<main />
-	<script src=`https://maps.googleapis.com/maps/api/js?key=${apiKey}&callback=initMap&libraries=places&v=weekly` defer></script>
 </body>
 </html>
 
