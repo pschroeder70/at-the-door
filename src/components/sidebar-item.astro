@@ -14,9 +14,9 @@ const { event } = Astro.props as Props;
 
 <div class=`day day--${day}`>
     <h4>{day}</h4>
-    <span><strong>Drink :</strong> {drink}</span>
-    <span><strong>Food :</strong> {food}</span>
-    <span><strong>Event :</strong> {event}</span>
+    <div><strong>Drink :</strong> {drink}</div>
+    <div><strong>Food :</strong> {food}</div>
+    <div><strong>Event :</strong> {event}</div>
 </div>
 
 <style>
@@ -26,7 +26,11 @@ const { event } = Astro.props as Props;
     }
 
     .day h4 {
-        margin: 15px 0 5px;
+        margin: 15px 0;
+    }
+
+    .day div {
+        margin: 5px 0
     }
 
     @media (max-width: 768px) {

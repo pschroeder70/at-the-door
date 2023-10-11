@@ -1,7 +1,5 @@
 ---
 import SideBarItem from "./sidebar-item.astro";
-
-import ChalkBg from '../img/chalkboard-background.jpg';
 ---
 
 <aside class="sidebar">
@@ -18,13 +16,17 @@ import ChalkBg from '../img/chalkboard-background.jpg';
         display: flex;
         flex-direction: column;
         background-image: url('../img/chalkboard-background.jpg');
-        border: 5px solid var(--logo-drk-purple);
+        border: 10px solid transparent;
+        border-image-source: url('../img/purple-border.jpg');
+        border-image-slice: 10; /* Adjust the slice value to control how the image is divided for border segments */
+        border-image-repeat: round;
         min-width: 200px;
         height: fit-content;
         margin: 50px 0 0 50px;
         padding: 25px 15px;
         text-align: center;
         font-family: var(--chalk-font);
+        overflow: hidden;
     }
 
     .sidebar h2 {
