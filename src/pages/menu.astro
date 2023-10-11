@@ -4,66 +4,67 @@ import MenuItem from '../components/menu-item.astro';
 ---
 
 <Layout title="Leave it at the Door" currentPage = "menu">
-        <div class="menu">
-          <div class="menu__column menu__column--apps">
-            <h4>Appitizers</h4>
-            <MenuItem name="Nachos" price="$12.99" disc="nachos!!  Chix or Beef, OR BOTH!  disc to come." />
-            <MenuItem name="Mozz Sticks" price="$9.99" disc="Crispy fried mozzarella cheese, served with a side of marinara sauce" />
-            <MenuItem name="Chix Fingers" price="$3.99" disc="It's chicken fingers, come on you know what they are! Get em Buffalo if your spicy." />
-            <MenuItem name="Pretzel Sticks" price="$5.99" disc="Warm Bavarian pretzel w/beer cheese for dipping!" />
-            <MenuItem name="Egg Rolls" price="$5.25" disc="Actually contains no eggs... but it is rolled & filled with shredded cabbage, pork, and a few other things." />
-          </div>
-          <div class="menu__column--border"></div>
-          <div class="menu__column menu__column--sandies">
-            <h4>Hands On</h4>
-            <MenuItem name="Smash Burgers" price="$9.99" disc="Not one but two 4oz patties smash to perfection, and served on a toasted bun! Add the toppings you like, or keep it simple with just cheese!*" />
-            <MenuItem name="Chix Bacon Ranch Wrap" price="$9.99" disc="Wrights Bacon!!! Marinated chicken, Homemade Ranch dressing w/lettuce & tomato" />
-            <MenuItem name="Steak & Cheese" price="$8.99" disc="Thin sliced ribeye, and lots of cheese!! Make it a bomb for $2" />
-            <MenuItem name="Schnitzel Sandwich" price="$5.99" disc="Tenderized Pork Cutlet breaded and fried, served on a toasted roll with mayo & lettuce!" />
-            <p>* choice of side w/burgers & sandwiches</p>
-          </div>
-          <div class="menu__column--border2"></div>
-            <div class="menu__column menu__column--entrees">
-            <h4>Entrees</h4>
-            <MenuItem name="Baked Mac & Cheese" price="$12.99" disc="It's not that stuff that comes with an orange packet!!!" />
-            <MenuItem name="Steak Tips" price="$9.99" disc="Tell us how you want them cooked, anything over med-rare is a sin." />
-            <MenuItem name="Spegetti and Meatballs" price="$3.99" disc="Just like mama used to make, if Keri was your mom." />
-            <MenuItem name="Meatloaf" price="$5.99" disc="it's meat, it's a loaf... it's good?  Comes with mash & gravy" />
-          </div>
-          <div class="menu__row menu__row--pizza">
-            <h4>Pub Pizza $9.99</h4>
-            <h3>Personal sized pizza, additional toppings $1/per</h3>
-            <p>Toppings include: pepperoni, onions, green pepper, muchroom, bacon, sausage, tomato, ham</p>
-          </div>
-          <div class="menu__row menu__row--extra">
-            <div>
-              <h4>Sauces</h4>
-              <ul>
-                <li>Buffalo</li>
-                <li>Carolina Gold</li>
-                <li>Salem Sauce</li>
-                <li>Garlic Parm</li>
-                <li>BBQ</li>
-                <li>Bourbon</li>
-              </ul>
-            </div>
-            <div>
-              <h4>Sides</h4>
-              <ul>
-                <li>Fries</li>
-                <li>Hand Cut Wedge Fries</li>
-                <li>Onion Rings</li>
-                <li>Side Salad</li>
-                <li>Rice</li>
-                <li>Mashed Potatos w/gravy</li>
-              </ul>
-            </div>
-          
-          </div>
+  <div class='content__body'>
+    <h3 class='content__header'>Menu</h3>
+      <div class="menu">
+        <div class="menu__column menu__column--apps">
+          <h4>Appitizers</h4>
+          <MenuItem name="Nachos" price="$12.99" disc="nachos!!  Chix or Beef, OR BOTH!  disc to come." />
+          <MenuItem name="Mozz Sticks" price="$9.99" disc="Crispy fried mozzarella cheese, served with a side of marinara sauce" />
+          <MenuItem name="Chix Fingers" price="$3.99" disc="It's chicken fingers, come on you know what they are! Get em Buffalo if your spicy." />
+          <MenuItem name="Pretzel Sticks" price="$5.99" disc="Warm Bavarian pretzel w/beer cheese for dipping!" />
+          <MenuItem name="Egg Rolls" price="$5.25" disc="Actually contains no eggs... but it is rolled & filled with shredded cabbage, pork, and a few other things." />
         </div>
-        <a href='#page-top'>Back to Top</a>
-      </span>
-    </div>
+        <div class="menu__column--border"></div>
+        <div class="menu__column menu__column--sandies">
+          <h4>Hands On</h4>
+          <MenuItem name="Smash Burgers" price="$9.99" disc="Not one but two 4oz patties smash to perfection, and served on a toasted bun! Add the toppings you like, or keep it simple with just cheese!*" />
+          <MenuItem name="Chix Bacon Ranch Wrap" price="$9.99" disc="Wrights Bacon!!! Marinated chicken, Homemade Ranch dressing w/lettuce & tomato" />
+          <MenuItem name="Steak & Cheese" price="$8.99" disc="Thin sliced ribeye, and lots of cheese!! Make it a bomb for $2" />
+          <MenuItem name="Schnitzel Sandwich" price="$5.99" disc="Tenderized Pork Cutlet breaded and fried, served on a toasted roll with mayo & lettuce!" />
+          <p>* choice of side w/burgers & sandwiches</p>
+        </div>
+        <div class="menu__column--border2"></div>
+          <div class="menu__column menu__column--entrees">
+          <h4>Entrees</h4>
+          <MenuItem name="Baked Mac & Cheese" price="$12.99" disc="It's not that stuff that comes with an orange packet!!!" />
+          <MenuItem name="Steak Tips" price="$9.99" disc="Tell us how you want them cooked, anything over med-rare is a sin." />
+          <MenuItem name="Spegetti and Meatballs" price="$3.99" disc="Just like mama used to make, if Keri was your mom." />
+          <MenuItem name="Meatloaf" price="$5.99" disc="it's meat, it's a loaf... it's good?  Comes with mash & gravy" />
+        </div>
+        <div class="menu__row menu__row--pizza">
+          <h4>Pub Pizza $9.99</h4>
+          <h3>Personal sized pizza, additional toppings $1/per</h3>
+          <p>Toppings include: pepperoni, onions, green pepper, muchroom, bacon, sausage, tomato, ham</p>
+        </div>
+        <div class="menu__row menu__row--extra">
+          <div>
+            <h4>Sauces</h4>
+            <ul>
+              <li>Buffalo</li>
+              <li>Carolina Gold</li>
+              <li>Salem Sauce</li>
+              <li>Garlic Parm</li>
+              <li>BBQ</li>
+              <li>Bourbon</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Sides</h4>
+            <ul>
+              <li>Fries</li>
+              <li>Hand Cut Wedge Fries</li>
+              <li>Onion Rings</li>
+              <li>Side Salad</li>
+              <li>Rice</li>
+              <li>Mashed Potatos w/gravy</li>
+            </ul>
+          </div>
+        
+        </div>
+      </div>
+      <a href='#page-top'>Back to Top</a>
+  </div>
 </Layout>
 
 <style>

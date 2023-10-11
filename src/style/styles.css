@@ -1,20 +1,37 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+@font-face {
+  font-family: 'az-cut-script';
+  src: url('../fonts/AZCutScript.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'chalk-font';
+  src: url('../fonts/chalktastic.woff2') format('woff2'),
+       url('../fonts/chalktastic.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'font-common';
+  src: url('../fonts/AvantGardeBkBT.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}
 
 :root {
   --max-content-width: 1300px;
 
   --logo-purple: ab77f0;
-  --logo-drk-purple: #340a52;
-  --logo-lt-purple: #986cB8;
+  --logo-drk-purple: #340a52; /* rgb(52, 10, 82) */
+  --logo-lt-purple: #986cB8;  /* rgb(152, 108, 184) */
 
-  --main-family: 'Poppins', sans-serif;
+  --main-family: 'font-common', sans-serif;
+  --content-header: 'az-cut-script', sans-serif;
+  --chalk-font: 'chalk-font', sans-serif;
+
   --color-bg: linear-gradient(180deg, #fff 65%, #ab77f0 100%);
-
-  /* Controls the blob blur gradient colors within the main tag's svg */
-  --top-right-blur-1: #20C6B7;
-  --top-right-blur-2: #4D9ABF;
-  --bttm-left-blur-1: #FF5C02;
-  --bttm-left-blur-2: #FFCDB1;
 }
 
 html {
@@ -27,12 +44,18 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
+  background-color: #000;
+  background-image: url('../img/bar-bg.png');
+  background-size:cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: #fff;
 }
 
 .header {
   display: flex;
   align-items: center;
-  margin-bottom: 50px;
+  margin-bottom: 15px;
 }
 
 .content {
@@ -44,6 +67,19 @@ body {
 
 .content__one {
   flex: 1;
+}
+
+.content__body {
+  background-color: rgba(0, 0, 0, .8);
+  border-radius: 15px;
+  padding: 5px 20px;
+  min-height: 50vh;
+}
+
+.content__header {
+  font-size: 1.3em;
+  font-family: var(--content-header);
+  font-weight: normal;
 }
 
 .content__body-img {

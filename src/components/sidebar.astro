@@ -1,5 +1,7 @@
 ---
 import SideBarItem from "./sidebar-item.astro";
+
+import ChalkBg from '../img/chalkboard-background.jpg';
 ---
 
 <aside class="sidebar">
@@ -15,13 +17,14 @@ import SideBarItem from "./sidebar-item.astro";
     .sidebar {
         display: flex;
         flex-direction: column;
-        border: 1px solid grey;
-        border-radius: 15px;
+        background-image: url('../img/chalkboard-background.jpg');
+        border: 5px solid var(--logo-drk-purple);
         min-width: 200px;
         height: fit-content;
         margin: 50px 0 0 50px;
         padding: 25px 15px;
         text-align: center;
+        font-family: var(--chalk-font);
     }
 
     .sidebar h2 {

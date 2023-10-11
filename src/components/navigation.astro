@@ -50,11 +50,20 @@ if (headerNav) {
 
 .header__nav-items li {
 	padding: 5px 10px;
+	font-size: 1.4em;
+}
+
+.header__nav-items li a {
+	color: #fff;
+	text-decoration: none;
+    animation: neon .08s ease-in-out infinite alternate;
 }
 
 .header__nav-items li a.active {
-    color: var(--logo-lt-purple);
-    font-weight: bold;
+	color: var(--logo-lt-purple);
+	-webkit-animation: none;
+	animation: none;
+    animation: neon2 .08s ease-in-out infinite alternate;
 }
 
 @media (max-width: 1000px) {
@@ -141,5 +150,45 @@ if (headerNav) {
 		margin-top: 14px;
 		padding: 0;
 	}
+}
+@keyframes neon {
+  from {
+    text-shadow:
+    0 0 6px rgba(202,228,225,0.92),
+    0 0 30px rgba(202,228,225,0.34),
+    0 0 12px rgba(202,228,225,0.52),
+    0 0 21px rgba(202,228,225,0.92),
+    0 0 34px rgba(202,228,225,0.78),
+    0 0 54px rgba(202,228,225,0.92);
+  }
+  to {
+    text-shadow:
+    0 0 6px rgba(202,228,225,0.98),
+    0 0 30px rgba(202,228,225,0.42),
+    0 0 12px rgba(202,228,225,0.58),
+    0 0 22px rgba(202,228,225,0.84),
+    0 0 38px rgba(202,228,225,0.88),
+    0 0 60px rgba(202,228,225,1);
+  }
+}
+@keyframes neon2 {
+  from {
+    text-shadow:
+    0 0 6px rgba(152, 108, 184,0.92),
+    0 0 30px rgba(152, 108, 184,0.34),
+    0 0 12px rgba(152, 108, 184,0.52),
+    0 0 21px rgba(152, 108, 184,0.92),
+    0 0 34px rgba(152, 108, 184,0.78),
+    0 0 54px rgba(152, 108, 184,0.92);
+  }
+  to {
+    text-shadow:
+    0 0 6px rgba(152, 108, 184,0.98),
+    0 0 30px rgba(152, 108, 184,0.42),
+    0 0 12px rgba(152, 108, 184,0.58),
+    0 0 22px rgba(152, 108, 184,0.84),
+    0 0 38px rgba(152, 108, 184,0.88),
+    0 0 60px rgba(152, 108, 184,1);
+  }
 }
 </style>
