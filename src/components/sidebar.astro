@@ -13,6 +13,8 @@ import SideBarItem from "./sidebar-item.astro";
 
 <style>
     .sidebar {
+        position: sticky;
+        top: 75px;
         display: flex;
         flex-direction: column;
         background-image: url('../img/chalkboard-background.jpg');
@@ -23,25 +25,27 @@ import SideBarItem from "./sidebar-item.astro";
         min-width: 200px;
         height: fit-content;
         margin: 50px 0 0 50px;
-        padding: 25px 15px;
+        padding: 20px 15px;
         text-align: center;
         font-family: var(--chalk-font);
         overflow: hidden;
     }
 
     .sidebar h2 {
-        margin: 0;
+        margin: 0 auto;
     }
 
     @media (max-width: 768px) {
 
         .sidebar {
+            position: relative;
             flex-direction: row;
             flex-wrap: wrap;
             margin: 25px auto;
+            max-width: fit-content;
         }
         .sidebar h2 {
-            width: 100%;
+            width: auto;
         }
     }
 
