@@ -51,6 +51,7 @@ body {
   background-attachment: fixed;
   background-repeat: no-repeat;
   color: #fff;
+  overflow-y: scroll;
 }
 
 a,
