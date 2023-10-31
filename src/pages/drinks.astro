@@ -1,11 +1,42 @@
 ---
-import Layout from '../layout/Layout.astro';
+import Layout from "../layout/Layout.astro";
+import Drink from "../components/drinkCard.astro";
+
+import cyberpunk from "../img/cyberpunk-cooler.jpg";
+import wargames from "../img/wargames.jpg";
+import pinklady from "../img/pinklady.jpg";
+import mariner from "../img/mariner.jpg";
 ---
 
-<Layout title="Leave it at the Door" currentPage = "drinks">
-  <div class='content__body'>
-    <h3 class='content__header'>Drink Menu</h3>
-    <p>Coming soon!</p>
+<Layout title="Leave it at the Door" currentPage="drinks">
+  <div class="content__body">
+    <h3 class="content__header">Drink Menu</h3>
+    <div class="drink-menu">
+      <Drink
+        drinkImage={cyberpunk}
+        drinkName="The Cyberpunk Cooler"
+        drinkContent="Blue Curaçao, Vodka, Lemonade & a splash of lemon-lime soda"
+        drinkStory="Inspired by one of the owners favortie movies 'Hackers'!"
+      />
+      <Drink
+        drinkImage={wargames}
+        drinkName="WarGames Whiskey Sour"
+        drinkContent="Whiskey, Lemon Juice & simple syrup"
+        drinkStory="'WarGames' is all about choices, after all!"
+      />
+      <Drink
+        drinkImage={pinklady}
+        drinkName="Pink Lady"
+        drinkContent="Gin, Applejack, lemon juice, Grenadine & an egg white"
+        drinkStory="Grease is the word..."
+      />
+      <Drink
+        drinkImage={mariner}
+        drinkName="Mariner's Mule"
+        drinkContent="Coconut Rum, Blue Curaçao, lime juice & ginger beer"
+        drinkStory="A liquid refreshment that's straight from WaterWorld"
+      />
+    </div>
 
     <!-- 
 
@@ -62,5 +93,11 @@ import Layout from '../layout/Layout.astro';
 <style>
   .content__body-item {
     display: flex;
+  }
+
+  .drink-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
   }
 </style>

@@ -8,9 +8,9 @@ const apiKey = 'AIzaSyAahQnLy5sv3ZK0pfacCXxigfyNaxDdoCA';
   <div class='content__body'>
     <h3 class='content__header'>Contact US</h3>
     <p>We are located on Falling Spring Road, in Lovely Simpsonville SC.</p>
-    <div id="map"></div>
-    <p>Maybe you like to fill out forms?  Come on who doesn't??</p>
-    <form name="contact" method="POST" data-netlify="true">
+    <div id="map" class="outline outline--med"></div>
+    <p>Maybe you like to fill out forms?  Come on who doesn't?? (no one)</p>
+    <form name="contact" method="POST" data-netlify="true" class="form outline outline--med">
       <p>
         <label>Name: <input type="text" name="name" /></label>
         <label>Email: <input type="email" name="email" /></label>
@@ -46,17 +46,14 @@ const apiKey = 'AIzaSyAahQnLy5sv3ZK0pfacCXxigfyNaxDdoCA';
     margin: 25px auto;
 	}
 
-  form {
+  .form {
     display: flex;
     flex-direction: column;
-    flex: 0;
-    border: 1px solid grey;
-    border-radius: 15px;
     width: fit-content;
     padding: 10px 20px;
     margin: 0 auto;
-    background: rgba(255, 255, 255, .5);
-    color: #000;
+    background-image: url(/src/img/chalkboard-background.jpg);
+    color: #fff;
   }
 
   textarea {

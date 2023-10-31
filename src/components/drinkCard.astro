@@ -1,0 +1,49 @@
+---
+import { Image } from "astro:assets";
+
+export interface Props {
+  drinkImage: ImageMetadata;
+  drinkName: string;
+  drinkContent: string;
+  drinkStory: string;
+}
+
+let { drinkImage, drinkName, drinkContent, drinkStory } = Astro.props as Props;
+---
+
+<div class="drink">
+  <div class="drink__image">
+    <Image src={drinkImage} alt={drinkImage.toString()} aria-hidden="true" class="outline" />
+  </div>
+  <div class="drink__name">{drinkName}</div>
+  <div class="drink__content">{drinkContent}</div>
+  <div class="drink__story">{drinkStory}</div>
+</div>
+
+<style>
+  .drink {
+    display: grid;
+    grid-template-columns: 150px auto;
+    grid-template-rows: repeat(3, auto);
+    gap: .5em 1.5em;
+    margin: 1.5em 0;
+    min-width: 350px;
+    width: 45%;
+    @media screen and (max-width: 750px) {
+        width: 100%;
+    }
+  }
+  .drink__name {
+    font-size: 1.2em;
+  }
+
+  .drink__image {
+    grid-column: 1/2;
+    grid-row: 1/4;
+  }
+
+  .drink__name {
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+</style>

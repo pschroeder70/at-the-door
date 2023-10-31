@@ -24,9 +24,10 @@
 :root {
   --max-content-width: 1300px;
 
-  --logo-purple: ab77f0;
+  --logo-purple: #ab77f0;
   --logo-drk-purple: #340a52; /* rgb(52, 10, 82) */
   --logo-lt-purple: #986cB8;  /* rgb(152, 108, 184) */
+  --link-hover: #e5caf8;
 
   --main-family: 'font-common', sans-serif;
   --content-header: 'az-cut-script', sans-serif;
@@ -56,12 +57,29 @@ body {
 
 a,
 a:visited {
-  color: var(--logo-lt-purple);
+  color: var(--logo-purple);
+  text-decoration: none;
 }
 
 a:hover,
 a:focus {
-  text-decoration: none;
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
+.outline {
+  border: 2px solid transparent;
+  border-image-source: url("../img/purple-border.jpg");
+  border-image-slice: 10;
+  border-image-repeat: round;
+}
+
+.outline--med {
+  border-width: 5px;
+}
+
+.outline--wide {
+  border-width: 10px;
 }
 
 .header {
